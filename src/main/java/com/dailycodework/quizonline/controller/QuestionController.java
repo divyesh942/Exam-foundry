@@ -16,11 +16,7 @@ import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
-/**
- * @author Simpson Alfred
- */
-
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/api/quizzes")
 @RequiredArgsConstructor

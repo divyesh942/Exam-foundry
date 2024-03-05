@@ -14,7 +14,8 @@ import java.util.List;
 @Setter
 @Entity
 public class Question {
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
     private String question;
