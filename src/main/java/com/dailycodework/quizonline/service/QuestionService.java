@@ -35,7 +35,22 @@ public class QuestionService implements IQuestionService{
     public List<String> getAllSubjects() {
         return questionRepository.findDistinctSubject();
     }
+    
+    @Override
+    public Question updateQuestion(Long id, Question question) throws ChangeSetPersister.NotFoundException {
 
+        Optional<Question> theQuestion = this.getQuestionById(id);
+        if (theQuestion.isPresent()){
+            Question updatedQuestion = theQuestion.get();
+            updatedQuestion.setQuestion(question.getQuestion());
+            updatedQuestion.setChoices(question.getChoices());
+            updatedQuestion.setCorrectAnswers(question.getCorrectAnswers());
+            return questionRepository.save(updatedQuestion);
+        }else {
+            throw new ChangeSetPersister.NotFoundException();
+        }
+
+    }
   
     @Override
     public void deleteQuestion(Long id) {
