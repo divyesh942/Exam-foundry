@@ -63,17 +63,6 @@ public class QuestionController {
         return ResponseEntity.ok(subjects);
     }
 
-    @GetMapping("/quiz/fetch-questions-for-user")
-    public ResponseEntity<List<Question>> getQuestionsForUser(
-            @RequestParam Integer numOfQuestions, @RequestParam String subject){
-        List<Question> allQuestions = questionService.getQuestionsForUser(numOfQuestions, subject);
-
-        List<Question> mutableQuestions = new ArrayList<>(allQuestions);
-        Collections.shuffle(mutableQuestions);
-
-        int availableQuestions = Math.min(numOfQuestions, mutableQuestions.size());
-        List<Question> randomQuestions = mutableQuestions.subList(0, availableQuestions);
-        return ResponseEntity.ok(randomQuestions);
-    }
+   
 
 }
