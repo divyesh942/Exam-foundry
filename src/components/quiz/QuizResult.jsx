@@ -21,7 +21,7 @@ import { useLocation} from "react-router-dom"
 				<p>Your total score is {percentage}%.</p>
 
 				<button className="btn btn-primary btn-sm" onClick={handleRetakeQuiz}>
-					Retake this quiz
+					Retake  quiz
 				</button>
 			</section>
 		)
