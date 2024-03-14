@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getSubjects } from "../../../QuizService"
-
+import { getSubjects } from "../../QuizService"
  const QuizStepper = () => {
 		const [currentStep, setCurrentStep] = useState(1)
 		const [selectedSubject, setSelectedSubject] = useState("")

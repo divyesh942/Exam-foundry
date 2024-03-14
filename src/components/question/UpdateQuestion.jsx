@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { getQuestionById,updateQuestion } from "../../../QuizService"
-
+import { getQuestionById,updateQuestion } from "../../QuizService"
 const UpdateQuestion = () => {
 	const { id } = useParams()
 	const navigate = useNavigate()
